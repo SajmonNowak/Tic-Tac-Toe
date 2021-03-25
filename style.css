@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+:root{
+    --myYellow: #FDEDA2;
+    --myRed:#FF5A36;
+    --myBlue: #12264B;
+    --hoverBackground: #FF5A3640;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+
+body {
+    font-family: 'DotGothic16';
+    background-color: var(--myYellow);
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    margin-top:50px;
+    justify-content: center;
+}
+
+body h1,h2,h4, p {
+    color: var(--myRed);
+}
+
+h1 {
+    font-size: 96px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 24px;
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--myBlue);
+    border-color: var(--myBlue);
+    background-color: var(--hoverBackground);
+    border: none;
+    width: 150px;
+    height: 50px;
+}
+
+/* Start */
+
+#startPage {
+    background-color: var(--myYellow);
+}
+
+.playerContainer {
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    
+}
+
+@media (max-width: 1000px){
+    .playerContainer {
+        width:70%;
+    }
+}
+
+.playerDiv {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+}
+
+.buttonDiv {
+    width: 150px;
+    display:flex;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.mainTitle {
+    margin-bottom: 50px;
+    color: var(--myBlue)
+    
+}
+
+.playerButton {
+    margin-bottom:10px;
+}
+
+.playerContainer h4 {
+    margin-bottom: 30px;
+}
+
+#playButton {
+    margin-top: 50px;
+    align-self: center;
+    color: var(--myBlue);
+    background-color: var(--myRed)
+}
+
+.computerDiv {
+    background-color: black;
+    width: 150px;
+    display: flex;
+}
+
+.diffDiv {
+    display: none;
+    justify-content: center;
+    width:100%;
+    
+}
+
+.diffButton {
+
+    height: 40px;
+    border-top: none;
+    align-self: stretch;
+    background-color:var(--hoverBackground);
+    margin-top: 2px;
+}
+
+.easyBtn {
+    margin-right:1px;
+}
+
+.hardBtn{
+    margin-left: 1px;
+}
+
+.computerButton {
+    margin-bottom: 0px;
+}
+
+.active {
+    background-color: var(--myRed);
+}
+
+/* Gamefield */
+
+.mainGameDiv {
+    display: none;
+}
+
+.gameField {
+    width:400px;
+    height:400px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.fieldDiv {
+    height: calc(100%/3);
+    flex-basis: 33%;
+    border:4px solid;
+    border-color: var(--myRed);
+    color: var(--myBlue);
+    padding:10px;
+    font-size: 100px;
+}
+
+.fieldDiv:hover {
+    background-color: var(--hoverBackground);
+}
+
+#restartButton {
+    margin-top: 50px;
+    background-color: var(--myRed);
+}
+
+.sign {
+    width:100%;
+    height:100%;
+    color: var(--myBlue);
+    padding:10px;
+    font-size: 100px;
+}
+
+.scoreDiv {
+    display:flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.score {
+    padding:0 20 0 20;
+    font-size: 20px;
+    color:var(--myBlue)
+}
+
+#consoleDiv {
+    font-size: 32px;
+    color: var(--myRed);
+    font-weight: bold;
+}
+

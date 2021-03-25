@@ -1,0 +1,76 @@
+<html>
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="mainTitle"> Tic Tac Toe </h1>
+    </header>
+
+    <div id="startPage">
+        <div class="starPage-content">
+            <h2>Choose your side</h2>
+            <div class= playerContainer>
+                <div class="playerDiv">
+                    <h4> PLAYER 1 (X)</h4>
+                    <div class="buttonDiv">
+                        <button id="1HumanButton" class="playerButton">Human</button>
+                        <button id="1ComputerButton" class="playerButton computerButton">Computer</button>
+                        <div class="diffDiv">
+                            <button class="diffButton easyBtn diff1">Easy</button>
+                            <button class="diffButton hardBtn diff1">Hard</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playerDiv">
+                    <h4> PLAYER 2 (0)</h4>
+                    <div class="buttonDiv">
+                        <button id="2HumanButton" class="playerButton">Human</button>
+                        <button id="2ComputerButton" class="playerButton computerButton">Computer</button>
+                        <div class="diffDiv">
+                            <button class="diffButton easyBtn diff2">Easy</button>
+                            <button class="diffButton hardBtn diff2">Hard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="playButton">PLAY</button>
+        </div>
+    </div>
+
+    <div id ="mainGameDiv" class="mainGameDiv">
+            
+        <div>
+            <h2>Score</h2>
+            <div class='scoreDiv'>
+                <div id='score1' class='score'>Player 1 (X): 0</div>
+                <div id='score2' class='score'>Player 2 (O): 0</div>
+            </div>
+        </div>
+        <div id="gameField" class="gameField">
+            <div data-index="0" class="fieldDiv topField leftField"></div>
+            <div data-index="1" class="fieldDiv topField"></div>
+            <div data-index="2" class="fieldDiv topField rightField"></div>
+            <div data-index="3" class="fieldDiv leftField"></div>
+            <div data-index="4" class="fieldDiv"></div>
+            <div data-index="5" class="fieldDiv rightField"></div>
+            <div data-index="6" class="fieldDiv leftField bottomField"></div>
+            <div data-index="7" class="fieldDiv bottomField"></div>
+            <div data-index="8" class="fieldDiv rightField bottomField"></div>
+        </div>
+        
+
+        <div id ="consoleDiv">It is X's turn</div>
+        
+
+        <div>
+            <button id="restartButton">Start Page</button>
+        </div>
+    </div>
+
+</body>
+<script src="main.js"></script>
+</html>
