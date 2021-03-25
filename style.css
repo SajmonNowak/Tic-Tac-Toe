@@ -175,6 +175,26 @@ button {
     font-size: 100px;
 }
 
+span {
+    display: block;
+}
+
+.animation {
+    animation-duration: 1s;
+    animation-name: test;
+}
+
+@keyframes test{
+    from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+}
+
+
+
 .fieldDiv:hover {
     background-color: var(--hoverBackground);
 }

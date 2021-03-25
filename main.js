@@ -71,6 +71,16 @@ const DOM = (() => {
         setConsoleMessage(`It is ${controller.getCurrentPlayerSign()}'s turn`)
     }
 
+    const doAnimation = (field) => {
+        fieldElements[field].querySelector('span').classList.add('animation');
+    }
+    
+    const removeAnimations = () => {
+        for (i=0; i<8; i++){
+            fieldElements[i].querySelector('span').classList.remove('animation');
+        }
+    }
+
     allOptionButtons.forEach(button => {
         button.addEventListener('click', activateOption);
     })
@@ -80,12 +90,14 @@ const DOM = (() => {
         playButton : document.getElementById('playButton'),
         restartButton : document.getElementById('restartButton'),
         fieldElements,
+        gamePage,
         getActiveOptions,
         closeStartpage,
         updateScore,
         updateTurnMessage,
         setConsoleMessage,
-        gamePage
+        doAnimation,
+        removeAnimations,
     }
 
 })();
@@ -130,12 +142,13 @@ const gameBoard = (() => {
             gameBoard.setField(i, '');
         }
         createGameBoard();
+        DOM.removeAnimations();
         DOM.updateTurnMessage();
     }
 
     const createGameBoard = () =>{
         for (let i = 0; i < 9; i++) {
-            DOM.fieldElements[i].textContent = gameBoard.getField(i);
+            DOM.fieldElements[i].querySelector('span').textContent = gameBoard.getField(i);
           }
     }
 
@@ -149,7 +162,7 @@ const gameBoard = (() => {
         return emptyFields;
     }
 
-    return {setField, getField, reset, createGameBoard, getBoard, getEmptyFields}
+    return {setField, getField, reset, createGameBoard, getBoard, getEmptyFields,}
 })();
 
 
@@ -201,6 +214,7 @@ const controller = (() => {
         gameBoard.setField(fieldIndex, getCurrentPlayerSign());
         round ++;
         gameBoard.createGameBoard();
+        DOM.doAnimation(fieldIndex);
         DOM.updateTurnMessage();
         endGame(checkForWinner(gameBoard));
         checkComputerTurn();
@@ -301,7 +315,7 @@ const AI = (() => {
     const randomChoice = () => {
         let randomNumber = Math.floor(Math.random()*gameBoard.getEmptyFields().length);
         let randomIndex = gameBoard.getEmptyFields()[randomNumber];
-        controller.playRound(randomIndex);
+        setTimeout(controller.playRound, 500, randomIndex);
     }
 
     const minimax = () => {
@@ -334,7 +348,7 @@ const AI = (() => {
                     }
                 }
             }
-            controller.playRound(bestIndex);
+            setTimeout(controller.playRound,500, bestIndex);
         }
 
 
